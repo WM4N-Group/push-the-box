@@ -31,3 +31,4 @@ Thumbs.db
 .git-credentials
 .netrc
 auth.json
+.DS_Store

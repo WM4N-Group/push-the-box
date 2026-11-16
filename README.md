@@ -4,6 +4,8 @@ Go2 四足底盘 + PiPER 机械臂的 ROS 2 控制项目。底盘运行已有强
 
 当前运行环境：Jetson / Ubuntu、ROS 2 Foxy、Python 3.8、CycloneDDS；使用现有 `go2_piper` 容器。机械臂 SDK 固定为 0.6.2，底盘策略为 `arm_moving_clock`。
 
+本地 MuJoCo：在仓库根目录运行 `bash tools/launch_mujoco.sh --push`，演示 **IK 前伸 → 关节目标保持 → ONNX 底盘行走推箱子 → 停止**。默认 1 kg 箱子、目标位移 0.5 m；去掉 `--push` 为站立 PD 场景。启动、验证结果及适用范围见 [MuJoCo 推箱子说明](docs/mujoco_push_setup.md)。
+
 ## 目录
 
 ```text

@@ -1,0 +1,5 @@
+# Standalone macOS/Linux simulation; separate from the ROS/Foxy requirements.
+mujoco==3.2.3
+numpy==1.26.4
+onnxruntime==1.19.2
+PyYAML==6.0.2

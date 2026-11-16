@@ -1,0 +1,22 @@
+<mujoco model="Go2 Standard PiPER - Box Setup">
+  <include file="go2_piper_standard.xml" />
+  <statistic center="0.5 0 0.3" extent="2.5" />
+  <visual>
+    <headlight ambient="0.35 0.35 0.35" diffuse="0.7 0.7 0.7" />
+    <global azimuth="135" elevation="-25" offwidth="1280" offheight="800" />
+  </visual>
+  <asset>
+    <texture name="push_floor_tex" type="2d" builtin="checker" rgb1="0.22 0.26 0.30" rgb2="0.32 0.37 0.42" width="512" height="512" />
+    <material name="push_floor_mat" texture="push_floor_tex" texrepeat="2 2" texuniform="true" reflectance="0.1" />
+  </asset>
+  <worldbody>
+    <light pos="0 -2 4" dir="0 0 -1" directional="true" />
+    <geom name="floor" type="plane" size="10 10 0.1" material="push_floor_mat" friction="0.8 0.005 0.0001" />
+    <!-- +X is the robot's forward direction. Box dimensions are 0.4 m cubed. -->
+    <body name="push_box" pos="1.2 0 0.2">
+      <freejoint name="box_free" />
+      <geom name="box_collision" type="box" size="0.2 0.2 0.2" mass="1" rgba="0.88 0.48 0.16 1" friction="0.6 0.005 0.0001" condim="4" />
+      <site name="box_push_target" pos="-0.201 0 0.10" size="0.014" rgba="0.1 0.8 0.95 1" />
+    </body>
+  </worldbody>
+</mujoco>
